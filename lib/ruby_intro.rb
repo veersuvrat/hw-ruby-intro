@@ -4,6 +4,11 @@
 
 def sum arr
   # YOUR CODE HERE
+  rtrn_sum = 0
+  arr.each do |each_baby|
+    rtrn_sum += each_baby
+  end
+  return rtrn_sum
 end
 
 def max_2_sum arr
