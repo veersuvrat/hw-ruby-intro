@@ -1,5 +1,9 @@
 # When done, submit this entire file to the autograder.
 
+# Partners:
+# Hamza Ahmed
+# Veersuvrat Rajpal
+
 # Part 1
 
 def sum arr
