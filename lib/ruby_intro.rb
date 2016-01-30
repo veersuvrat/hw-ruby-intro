@@ -13,6 +13,30 @@ end
 
 def max_2_sum arr
   # YOUR CODE HERE
+  array_length = arr.length
+  if array_length == 0
+    return 0
+  elsif array_length == 1
+    return arr[0]
+  end
+  x = arr[0]
+  y = arr[1]
+  if x > y
+    temp = x
+    x = y
+    y = temp
+  end
+  i = 2
+  while i < array_length
+    if arr[i] > y
+      x = y
+      y = arr[i]
+    elsif arr[i] > x
+      x = arr[i]
+    end
+    i += 1
+  end
+  return x + y
 end
 
 def sum_to_n? arr, n
