@@ -41,6 +41,20 @@ end
 
 def sum_to_n? arr, n
   # YOUR CODE HERE
+  if arr.length < 2
+    return false
+  end
+  require 'set'
+  elems = Set.new
+  arr.each do |each_baby|
+    elems.add(each_baby)
+  end
+  arr.each do |each_baby_again|
+    if (elems.include? (n - each_baby_again)) && ((n - each_baby_again) != each_baby_again)
+      return true
+    end
+  end
+  return false
 end
 
 # Part 2
