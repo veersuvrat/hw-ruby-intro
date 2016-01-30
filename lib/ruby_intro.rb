@@ -61,18 +61,46 @@ end
 
 def hello(name)
   # YOUR CODE HERE
+  return "Hello, " + name
 end
 
 def starts_with_consonant? s
   # YOUR CODE HERE
+  if (s =~ /\A[^aeiouAEIOU\W]/)
+    return true
+  else
+    return false
+  end
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
+  if (s =~ /[^01]/ || s == "")
+    return false
+  end
+  value = s.to_i(2)
+  if value % 4 == 0
+    return true
+  else
+    return false
+  end
 end
 
 # Part 3
 
 class BookInStock
 # YOUR CODE HERE
+  attr_accessor :isbn
+  attr_accessor :price
+  def initialize(isbn, price)
+    if isbn == "" || price <= 0
+      raise ArgumentError
+    end
+    @isbn = isbn
+    @price = price
+  end
+
+  def price_as_string
+    return sprintf('$%.2f', @price)
+  end
 end
